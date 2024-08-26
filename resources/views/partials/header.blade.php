@@ -56,6 +56,11 @@
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
+                <a href="/about" class="text-white relative group">
+                    Tentang Kami
+                    <span
+                        class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
+                </a>
             </div>
         </div>
     </div>
