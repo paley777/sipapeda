@@ -1,3 +1,8 @@
+<style>
+    .active span {
+        transform: scaleX(1);
+    }
+</style>
 <nav class="sticky top-0 z-50 shadow-lg bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700">
     <div class="container mx-auto px-4 md:px-12 py-3">
         <div class="flex justify-between items-center">
@@ -31,39 +36,45 @@
 
             <!-- Desktop Menu -->
             <div class="hidden md:flex space-x-6">
-                <a href="/" class="text-white relative group">
+                <a href="/" class="text-white relative group {{ request()->is('/') ? 'active' : '' }}">
                     Beranda
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
-                <a href="/about" class="text-white relative group">
+                <a href="/perda" class="text-white relative group {{ request()->is('perda') ? 'active' : '' }}">
                     Daftar Perda
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
-                <a href="/services" class="text-white relative group">
+                <a href="/services" class="text-white relative group {{ request()->is('services') ? 'active' : '' }}">
                     Daftar Pergub
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
-                <a href="/contact" class="text-white relative group">
+                <a href="/contact" class="text-white relative group {{ request()->is('contact') ? 'active' : '' }}">
                     Berita
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
-                <a href="/contact" class="text-white relative group">
+                <a href="/pelaporan" class="text-white relative group {{ request()->is('pelaporan') ? 'active' : '' }}">
                     Pelaporan
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
+                <a href="/about" class="text-white relative group {{ request()->is('about') ? 'active' : '' }}">
+                    Tentang Kami
+                    <span
+                        class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
+                </a>
             </div>
+
         </div>
     </div>
 
     <!-- Mobile Menu -->
     <div class="hidden mobile-menu md:hidden">
         <a href="/" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Beranda</a>
-        <a href="/about" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Perda</a>
+        <a href="/perda" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Perda</a>
         <a href="/services" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Pergub</a>
         <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Berita</a>
         <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Pelaporan</a>
