@@ -10,6 +10,8 @@
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.5.1/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 </head>
 
 <style>
