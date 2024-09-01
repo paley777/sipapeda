@@ -17,9 +17,9 @@
                 <h3 class="text-lg font-semibold">Navigasi</h3>
                 <ul class="mt-4">
                     <li><a href="/" class="text-gray-400 hover:text-white">Beranda</a></li>
-                    <li><a href="/about" class="text-gray-400 hover:text-white">Daftar Perda</a></li>
-                    <li><a href="/services" class="text-gray-400 hover:text-white">Daftar Pergub</a></li>
-                    <li><a href="/contact" class="text-gray-400 hover:text-white">Berita</a></li>
+                    <li><a href="/perda" class="text-gray-400 hover:text-white">Daftar Perda</a></li>
+                    <li><a href="/pergub" class="text-gray-400 hover:text-white">Daftar Pergub</a></li>
+                    <li><a href="/berita" class="text-gray-400 hover:text-white">Berita</a></li>
                     <li><a href="/contact" class="text-gray-400 hover:text-white">Pelaporan</a></li>
                     <li><a href="/contact" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
                 </ul>

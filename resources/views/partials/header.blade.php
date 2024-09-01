@@ -46,12 +46,12 @@
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
-                <a href="/services" class="text-white relative group {{ request()->is('services') ? 'active' : '' }}">
+                <a href="/pergub" class="text-white relative group {{ request()->is('pergub') ? 'active' : '' }}">
                     Daftar Pergub
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
-                <a href="/contact" class="text-white relative group {{ request()->is('contact') ? 'active' : '' }}">
+                <a href="/berita" class="text-white relative group {{ request()->is('berita') ? 'active' : '' }}">
                     Berita
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
@@ -75,8 +75,8 @@
     <div class="hidden mobile-menu md:hidden">
         <a href="/" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Beranda</a>
         <a href="/perda" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Perda</a>
-        <a href="/services" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Pergub</a>
-        <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Berita</a>
+        <a href="/pergub" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Pergub</a>
+        <a href="/berita" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Berita</a>
         <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Pelaporan</a>
     </div>
 </nav>

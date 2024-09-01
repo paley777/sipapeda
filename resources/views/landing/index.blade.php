@@ -40,80 +40,36 @@
             <p class="text-lg text-gray-800 mt-2">Berita dan informasi terkini tentang penegakan peraturan daerah</p>
         </div>
         <div class="container mx-auto mt-8">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 justify-items-center">
-                <a href="#"
-                    class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 relative group"
-                    style="height: 250px;">
-                    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:brightness-50"
-                        style="background-image: url('{{ asset('images/carousel1.jpg') }}'); transition: filter 0.5s ease;">
-                    </div>
-                    <div class="relative z-10 p-4 h-full flex flex-col justify-end">
-                        <span
-                            class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold py-1 px-2 rounded-lg">2
-                            hours ago</span>
-                        <h3 class="text-xl font-bold text-white mb-2">Satpol PP Provinsi Bengkulu Meluncurkan SIPAPEDA</h3>
-                        <p class="text-white">Selasa, 27 Agustus 2024</p>
-                        <span
-                            class="block absolute bottom-0 left-0 w-full h-2 bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
-                    </div>
-                </a>
-
-                <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 relative group"
-                    style="height: 250px;">
-                    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:brightness-50"
-                        style="background-image: url('{{ asset('images/carousel1.jpg') }}'); transition: filter 0.5s ease;">
-                    </div>
-                    <div class="relative z-10 p-4 h-full flex flex-col justify-end">
-                        <span
-                            class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold py-1 px-2 rounded-lg">2
-                            hours ago</span>
-                        <h3 class="text-xl font-bold text-white mb-2">Satpol PP Provinsi Bengkulu Meluncurkan SIPAPEDA</h3>
-                        <p class="text-white">Selasa, 27 Agustus 2024</p>
-                        <span
-                            class="block absolute bottom-0 left-0 w-full h-2 bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
-                    </div>
-                </div>
-                <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 relative group"
-                    style="height: 250px;">
-                    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:brightness-50"
-                        style="background-image: url('{{ asset('images/carousel1.jpg') }}'); transition: filter 0.5s ease;">
-                    </div>
-                    <div class="relative z-10 p-4 h-full flex flex-col justify-end">
-                        <span
-                            class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold py-1 px-2 rounded-lg">2
-                            hours ago</span>
-                        <h3 class="text-xl font-bold text-white mb-2">Satpol PP Provinsi Bengkulu Meluncurkan SIPAPEDA</h3>
-                        <p class="text-white">Selasa, 27 Agustus 2024</p>
-                        <span
-                            class="block absolute bottom-0 left-0 w-full h-2 bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
-                    </div>
-                </div>
-                <div class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 relative group"
-                    style="height: 250px;">
-                    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:brightness-50"
-                        style="background-image: url('{{ asset('images/carousel1.jpg') }}'); transition: filter 0.5s ease;">
-                    </div>
-                    <div class="relative z-10 p-4 h-full flex flex-col justify-end">
-                        <span
-                            class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold py-1 px-2 rounded-lg">2
-                            hours ago</span>
-                        <h3 class="text-xl font-bold text-white mb-2">Satpol PP Provinsi Bengkulu Meluncurkan SIPAPEDA</h3>
-                        <p class="text-white">Selasa, 27 Agustus 2024</p>
-                        <span
-                            class="block absolute bottom-0 left-0 w-full h-2 bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
-                    </div>
-                </div>
+            <div
+                class="grid grid-cols-1 sm:grid-cols-2 {{ count($latestNews) >= 4 ? 'lg:grid-cols-4' : 'lg:grid-cols-' . count($latestNews) }} gap-3 justify-items-center">
+                @foreach ($latestNews as $news)
+                    <a href="/berita/{{ $news->slug }}"
+                        class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 relative group"
+                        style="height: 250px;">
+                        <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:brightness-50"
+                            style="background-image: url('{{ asset('images/carousel1.jpg') }}'); transition: filter 0.5s ease;">
+                        </div>
+                        <div class="relative z-10 p-4 h-full flex flex-col justify-end">
+                            <span
+                                class="absolute top-2 right-2 bg-blue-500 text-white text-xs font-semibold py-1 px-2 rounded-lg">{{ $news->created_at->diffForHumans() }}</span>
+                            <h3 class="text-xl font-bold text-white mb-2">{{ $news->judul }}</h3>
+                            <p class="text-white">{{ $news->created_at->translatedFormat('l, d F Y') }}</p>
+                            <span
+                                class="block absolute bottom-0 left-0 w-full h-2 bg-red-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
+                        </div>
+                    </a>
+                @endforeach
             </div>
         </div>
-
     </section>
-    <section class="bg-white py-16 px-4 md:px-12">
+
+    <section class="bg-white py-16 px-4 md:px-12 shadow-lg">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold text-gray-800">Jelajahi Fitur Utama SIPAPEDA</h2>
             <p class="text-lg text-gray-800 mt-2">Klik menu di bawah ini</p>
             <!-- Grid Menu (4 items in a row) -->
             <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mx-auto">
-                <a href="#daftar-perda"
+                <a href="/perda"
                     class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-6 rounded-lg shadow-lg hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105 flex flex-col items-center">
                     <div class="mb-0">
                         <!-- Replace with actual icon -->
@@ -125,7 +81,7 @@
                     </p>
                     <span class="text-sm font-medium underline">Lihat Selengkapnya</span>
                 </a>
-                <a href="#daftar-pergub"
+                <a href="/pergub"
                     class="bg-gradient-to-r from-green-500 to-teal-500 text-white p-6 rounded-lg shadow-lg hover:from-green-600 hover:to-teal-600 transition-all duration-300 transform hover:scale-105 flex flex-col items-center">
                     <div class="mb-0">
                         <!-- Replace with actual icon -->
@@ -136,7 +92,7 @@
                     <p class="text-center mb-4">Jelajahi daftar peraturan gubernur yang terbaru dan berlaku.</p>
                     <span class="text-sm font-medium underline">Lihat Selengkapnya</span>
                 </a>
-                <a href="#berita"
+                <a href="/berita"
                     class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg shadow-lg hover:from-purple-600 hover:to-pink-600 transition-all duration-300 transform hover:scale-105 flex flex-col items-center">
                     <div class="mb-0">
                         <!-- Replace with actual icon -->
@@ -147,7 +103,7 @@
                     </p>
                     <span class="text-sm font-medium underline">Baca Selengkapnya</span>
                 </a>
-                <a href="#pelaporan"
+                <a href="/pelaporan"
                     class="bg-gradient-to-r from-red-500 to-orange-500 text-white p-6 rounded-lg shadow-lg hover:from-red-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105 flex flex-col items-center">
                     <div class="mb-0">
                         <!-- Replace with actual icon -->
@@ -162,7 +118,8 @@
 
 
             <!-- Hero Section for "Tentang Kami" -->
-            <a href="#tentang-kami" class="block mt-16 bg-blue-500 text-white rounded-lg overflow-hidden relative group"
+            <a href="/tentang"
+                class="block mt-16 bg-blue-500 text-white rounded-lg overflow-hidden relative group shadow-lg"
                 style="height: 300px;">
                 <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-in-out group-hover:scale-110"
                     style="background-image: url('{{ asset('images/carousel1.jpg') }}');">
