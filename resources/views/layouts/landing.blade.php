@@ -12,6 +12,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/2.5.1/uicons-solid-rounded/css/uicons-solid-rounded.css'>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/2.1.4/js/dataTables.jqueryui.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.jqueryui.min.css">
 </head>
 
 <style>
@@ -107,6 +112,7 @@
 </body>
 
 </html>
+
 <script>
     //Get the button
     var mybutton = document.getElementById("scrollTopBtn");
