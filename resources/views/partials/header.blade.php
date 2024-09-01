@@ -61,7 +61,7 @@
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
                 </a>
-                <a href="/about" class="text-white relative group {{ request()->is('about') ? 'active' : '' }}">
+                <a href="/tentang" class="text-white relative group {{ request()->is('tentang') ? 'active' : '' }}">
                     Tentang Kami
                     <span
                         class="block absolute bottom-0 left-0 w-full h-0.5 bg-gray-200 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-in-out origin-left"></span>
@@ -77,7 +77,8 @@
         <a href="/perda" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Perda</a>
         <a href="/pergub" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Daftar Pergub</a>
         <a href="/berita" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Berita</a>
-        <a href="/contact" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Pelaporan</a>
+        <a href="/pelaporan" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Pelaporan</a>
+        <a href="/tentang" class="block py-2 px-4 text-sm text-white hover:bg-blue-600">Pelaporan</a>
     </div>
 </nav>
 
