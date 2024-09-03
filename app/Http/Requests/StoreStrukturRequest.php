@@ -11,7 +11,7 @@ class StoreStrukturRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -22,7 +22,17 @@ class StoreStrukturRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'jabatan' => 'required',
+            'nama' => 'required',
+            'nip' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'jabatan.required' => 'Jabatan field is required.',
+            'nama.required' => 'Nama field is required.',
+            'nip.required' => 'NIP field is required.',
         ];
     }
 }

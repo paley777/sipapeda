@@ -13,7 +13,8 @@ class StrukturController extends Controller
      */
     public function index()
     {
-        //
+        $strukturs = Struktur::orderBy('created_at', 'asc')->get();
+        return view('dashboard.struktur.index', compact('strukturs'));
     }
 
     /**
@@ -29,7 +30,11 @@ class StrukturController extends Controller
      */
     public function store(StoreStrukturRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+
+        Struktur::create($validatedData);
+
+        return redirect()->route('struktur.index')->with('success', 'Struktur added successfully!');
     }
 
     /**
@@ -53,7 +58,14 @@ class StrukturController extends Controller
      */
     public function update(UpdateStrukturRequest $request, Struktur $struktur)
     {
-        //
+        // First, get all validated data from the request
+        $validatedData = $request->validated();
+
+        // Update the model with the validated data
+        $struktur->update($validatedData);
+
+        // Redirect back or to another page with a success message
+        return redirect()->route('struktur.index')->with('success', 'Struktur updated successfully!');
     }
 
     /**
@@ -61,6 +73,10 @@ class StrukturController extends Controller
      */
     public function destroy(Struktur $struktur)
     {
-        //
+        // Delete the Pelaporan record
+        $struktur->delete();
+
+        // Redirect to the Perda index with a success message
+        return redirect()->route('struktur.index')->with('success', 'Struktur has been successfully deleted.');
     }
 }

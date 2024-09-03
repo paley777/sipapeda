@@ -4,16 +4,8 @@
 
 @section('content')
     <div class="flex-grow p-6">
-        <nav class="text-gray-700 body-font mb-6" aria-label="Breadcrumb">
-            <ol class="flex leading-none">
-                <li>
-                    <a href="/dashboard"
-                        class="bg-indigo-600 text-white py-1 px-3 rounded-full hover:bg-indigo-700 transition-colors duration-150 ease-in-out">
-                        /Dashboard
-                    </a>
-                </li>
-            </ol>
-        </nav>
+        @include('partials.breadcrumb')
+        @include('partials.flash-message')
 
         <main>
             <div class="bg-white p-8 rounded-lg shadow-lg">

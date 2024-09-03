@@ -65,6 +65,12 @@ return [
             'url' => env('APP_URL') . '/pergub',
             'visibility' => 'public',
         ],
+        'pelanggar' => [
+            'driver' => 'local',
+            'root' => public_path('pelanggar_files'),
+            'url' => env('APP_URL') . '/pelanggar',
+            'visibility' => 'public',
+        ],
     ],
 
     /*

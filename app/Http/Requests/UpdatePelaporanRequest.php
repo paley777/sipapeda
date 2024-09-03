@@ -11,7 +11,7 @@ class UpdatePelaporanRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -22,7 +22,19 @@ class UpdatePelaporanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'lembaga' => 'required',
+            'nama' => 'required',
+            'alamat' => 'required',
+            'keterangan' => 'required',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'lembaga.required' => 'Lembaga field is required.',
+            'nama.required' => 'Nama field is required.',
+            'alamat.required' => 'Alamat field is required.',
+            'keterangan.required' => 'Keterangan field is required.',
         ];
     }
 }

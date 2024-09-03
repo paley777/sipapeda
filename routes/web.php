@@ -6,6 +6,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PerdaController;
 use App\Http\Controllers\PergubController;
 use App\Http\Controllers\PelanggarController;
+use App\Http\Controllers\PelaporanController;
+use App\Http\Controllers\StrukturController;
 
 //LANDING
 Route::get('/', [LandingController::class, 'index']);
@@ -27,6 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('dashboard/perda', PerdaController::class);
     Route::resource('dashboard/pergub', PergubController::class);
     Route::resource('dashboard/pelanggar', PelanggarController::class);
+    Route::resource('dashboard/pelaporan', PelaporanController::class);
+    Route::resource('dashboard/struktur', StrukturController::class);
     Route::post('dashboard/perda/import', [PerdaController::class, 'importExcel'])->name('perda.import');
     Route::post('dashboard/pergub/import', [PergubController::class, 'importExcel'])->name('pergub.import');
 });

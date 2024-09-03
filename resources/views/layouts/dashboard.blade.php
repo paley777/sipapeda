@@ -18,7 +18,7 @@
     <script src="https://cdn.datatables.net/2.1.4/js/dataTables.jqueryui.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.jqueryui.min.css">
     <script src="https://unpkg.com/alpinejs@3" defer></script>
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 </head>
 <style>
     html {

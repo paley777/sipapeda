@@ -32,8 +32,8 @@
                             Pelanggar Perda
                         </a>
                     </li>
-                    <li class="p-2 hover:bg-blue-600 {{ request()->is('pelaporan') ? 'bg-blue-600' : '' }}">
-                        <a href="/pelaporan" class="flex items-center">
+                    <li class="p-2 hover:bg-blue-600 {{ request()->is('dashboard/pelaporan') ? 'bg-blue-700' : '' }}">
+                        <a href="/dashboard/pelaporan" class="flex items-center">
                             <i class="fi fi-rr-table mr-3"></i>
                             Pelaporan
                         </a>
@@ -46,8 +46,8 @@
                     Manajemen Berita
                 </a>
             </li>
-            <li class="p-4 hover:bg-blue-700 {{ request()->is('manajemen-struktur-organisasi') ? 'bg-blue-700' : '' }}">
-                <a href="/manajemen-struktur-organisasi" class="flex items-center">
+            <li class="p-4 hover:bg-blue-700 {{ request()->is('dashboard/struktur') ? 'bg-blue-700' : '' }}">
+                <a href="/dashboard/struktur" class="flex items-center">
                     <i class="fi fi-rr-department-structure mr-3"></i>
                     Manajemen Struktur Organisasi
                 </a>

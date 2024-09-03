@@ -11,7 +11,7 @@ class UpdatePelanggarRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -22,7 +22,17 @@ class UpdatePelanggarRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'identitas' => 'required',
+            'keterangan' => 'nullable',
+            'file' => 'nullable|file|mimes:jpg,jpeg,png|max:5120',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'identitas.required' => 'The identity field is required.',
+            'file.mimes' => 'Only JPG, JPEG, and PNG files are allowed.',
+            'file.max' => 'The file may not be greater than 5MB.',
         ];
     }
 }
