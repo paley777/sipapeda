@@ -46,4 +46,10 @@ class LandingController extends Controller
         $strukturs = Struktur::orderBy('created_at', 'asc')->get();
         return view('landing.tentang', compact('strukturs'));
     }
+    public function news_show($slug)
+{
+    $news = News::where('slug', $slug)->firstOrFail();
+    return view('landing.news_show', compact('news'));
+}
+
 }

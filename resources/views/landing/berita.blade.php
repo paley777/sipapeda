@@ -31,7 +31,7 @@
 
                                     <!-- Thumbnail di sebelah kiri -->
                                     <div class="mr-6">
-                                        <img src="{{ asset('images/carousel1.jpg') }}" alt="{{ $news->judul }}"
+                                        <img src="{{ url('news_files/' . $news->thumbnail) }}" alt="{{ $news->judul }}"
                                             class="w-70 h-40 object-cover rounded-lg">
                                     </div>
 

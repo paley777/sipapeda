@@ -13,7 +13,8 @@ class PelaporanController extends Controller
      */
     public function index()
     {
-        //
+        $pelaporans = Pelaporan::orderBy('created_at', 'desc')->get();
+        return view('dashboard.pelaporan.index', compact('pelaporans'));
     }
 
     /**
@@ -29,7 +30,11 @@ class PelaporanController extends Controller
      */
     public function store(StorePelaporanRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+
+        Pelaporan::create($validatedData);
+
+        return redirect()->route('pelaporan.index')->with('success', 'Pelaporan added successfully!');
     }
 
     /**
@@ -53,7 +58,14 @@ class PelaporanController extends Controller
      */
     public function update(UpdatePelaporanRequest $request, Pelaporan $pelaporan)
     {
-        //
+        // First, get all validated data from the request
+        $validatedData = $request->validated();
+
+        // Update the model with the validated data
+        $pelaporan->update($validatedData);
+
+        // Redirect back or to another page with a success message
+        return redirect()->route('pelaporan.index')->with('success', 'Pelaporan updated successfully!');
     }
 
     /**
@@ -61,6 +73,11 @@ class PelaporanController extends Controller
      */
     public function destroy(Pelaporan $pelaporan)
     {
-        //
+        
+        // Delete the Pelaporan record
+        $pelaporan->delete();
+
+        // Redirect to the Perda index with a success message
+        return redirect()->route('pelaporan.index')->with('success', 'Pelaporan has been successfully deleted.');
     }
 }

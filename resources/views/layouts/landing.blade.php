@@ -21,85 +21,81 @@
 
 <style>
     html {
-        font-size: 14px;
-        /* Default 'em' will now be based on 14px */
+        font-size: 14px; /* Default 'em' will now be based on 14px */
+        height: 100%;
+        margin: 0;
     }
 
     body {
         font-family: Arial, sans-serif;
         font-size: 1em;
+        height: 100%;
+        margin: 0;
+        background-color: #f3f4f6; /* Set background color to light gray */
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal; /* Default font weight for headings */
     }
 
     h1 {
-        font-size: 2em;
-        /* 28px berdasarkan font-size 14px */
-
+        font-size: 2em; /* 28px based on a font-size of 14px */
     }
 
     h2 {
-        font-size: 1.5em;
-        /* 21px berdasarkan font-size 14px */
-
+        font-size: 1.5em; /* 21px based on a font-size of 14px */
     }
 
     h3 {
-        font-size: 1.17em;
-        /* 16.38px berdasarkan font-size 14px */
-
+        font-size: 1.17em; /* 16.38px based on a font-size of 14px */
     }
 
     h4 {
-        font-size: 1em;
-        /* 14px berdasarkan font-size 14px */
-
+        font-size: 1em; /* 14px based on a font-size of 14px */
     }
 
     h5 {
-        font-size: 0.83em;
-        /* 11.62px berdasarkan font-size 14px */
-
+        font-size: 0.83em; /* 11.62px based on a font-size of 14px */
     }
 
     h6 {
-        font-size: 0.67em;
-        /* 9.38px berdasarkan font-size 14px */
+        font-size: 0.67em; /* 9.38px based on a font-size of 14px */
+    }
 
+    .container {
+        min-height: 100%; /* Make sure .container takes at least the full height of the viewport */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* This ensures that the footer pushes to the bottom */
+    }
+
+    footer {
+        position: sticky;
+        top: 100vh; /* This ensures the footer sticks to the bottom of the viewport */
+        width: 100%;
     }
 
     #scrollTopBtn {
-        display: none;
-        /* Hidden by default */
-        position: fixed;
-        /* Fixed/sticky position */
-        bottom: 30px;
-        /* Place the button at the bottom of the page */
-        right: 30px;
-        /* Place the button 30px from the right */
-        z-index: 99;
-        /* Make sure it does not overlap */
-        border: none;
-        /* Remove borders */
-        outline: none;
-        /* Remove outline */
-        background-color: #3b82f6;
-        /* Set a background color */
-        color: white;
-        /* Text color */
-        cursor: pointer;
-        /* Add a mouse pointer on hover */
-        padding: 12px 15px 10px 15px;
-        /* Some padding */
-        border-radius: 10px;
-        /* Rounded corners */
-        font-size: 18px;
-        /* Increase font size */
+        display: none; /* Hidden by default */
+        position: fixed; /* Fixed/sticky position */
+        bottom: 30px; /* Place the button at the bottom of the page */
+        right: 30px; /* Place the button 30px from the right */
+        z-index: 99; /* Make sure it does not overlap */
+        border: none; /* Remove borders */
+        outline: none; /* Remove outline */
+        background-color: #3b82f6; /* Set a background color */
+        color: white; /* Text color */
+        cursor: pointer; /* Add a mouse pointer on hover */
+        padding: 12px 15px 10px 15px; /* Some padding */
+        border-radius: 10px; /* Rounded corners */
+        font-size: 18px; /* Increase font size */
     }
 
     #scrollTopBtn:hover {
-        background-color: #555;
-        /* Add a dark-grey background on hover */
+        background-color: #555; /* Add a dark-grey background on hover */
     }
 </style>
+
 
 <body>
     @include('partials.header')

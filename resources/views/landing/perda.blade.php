@@ -38,7 +38,9 @@
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
                                 {{ $perda->sanksi }}</td>
                             <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $perda->ls }}</td>
-                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">{{ $perda->file }}</td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"><a
+                                    href="{{ url('perda_files/' . $perda->file) }}" target="_blank"
+                                    class="text-indigo-600 hover:text-indigo-900">Download</a></td>
                         </tr>
                     @endforeach
                 </tbody>

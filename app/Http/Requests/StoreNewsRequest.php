@@ -11,7 +11,7 @@ class StoreNewsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check();
     }
 
     /**
@@ -22,7 +22,21 @@ class StoreNewsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'judul' => 'required',
+            'kreator' => 'required',
+            'konten' => 'required',
+            'slug' => 'nullable',
+            'thumbnail' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:5120',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'judul.required' => 'The Judul field is required.',
+            'kreator.required' => 'The Kreator field is required.',
+            'konten.required' => 'The Konten field is required.',
+            'thumbnail.mimes' => 'Only Image files are allowed.',
+            'thumbnail.max' => 'The file may not be greater than 5MB.',
         ];
     }
 }
