@@ -28,6 +28,8 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [AuthController::class, 'dashboard']);
+    Route::get('/dashboard/profile', [AuthController::class, 'profile'])->name('profile');
+    Route::post('/dashboard/profile', [AuthController::class, 'save_profile'])->name('profile.save');
     Route::resource('dashboard/perda', PerdaController::class);
     Route::resource('dashboard/pergub', PergubController::class);
     Route::resource('dashboard/pelanggar', PelanggarController::class);

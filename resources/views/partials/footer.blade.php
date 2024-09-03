@@ -47,9 +47,13 @@
         </div>
         <br>
         <hr class="border-gray-400 opacity-50">
-        <div class="text-center mt-6 text-gray-500">
-            <p>&copy; <a href="https://polpp.bengkuluprov.go.id/">2024 SATPOL PP Provinsi Bengkulu</a> | ValleyFeeds.
-                All rights reserved.</p>
+        <div class="text-center mt-6 ">
+            <p>&copy; <a href="https://polpp.bengkuluprov.go.id/">2024 SATPOL PP Provinsi Bengkulu</a> |
+                <a href="https://www.linkedin.com/in/valleryan-virgil-zuliuskandar-50366a242/"
+                    style="color: blue; text-decoration: underline;">ValleyFeeds</a>.
+                All rights reserved.
+            </p>
+
         </div>
     </div>
 </footer>

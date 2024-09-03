@@ -9,7 +9,6 @@
             <h1 class="text-2xl md:text-4xl font-bold">Selamat Datang di SIPAPEDA</h1>
             <p class="text-md md:text-lg mt-2">Sistem Informasi Penegakan Peraturan Daerah</p>
         </div>
-
         <!-- Slides -->
         <div class="carousel-inner flex transition-transform duration-500 ease-in-out" style="transform: translateX(0);">
             <div class="carousel-item w-full flex-shrink-0">
@@ -25,7 +24,6 @@
                     alt="Slide 3">
             </div>
         </div>
-
         <!-- Controls -->
         <button
             class="absolute top-1/2 left-0 transform -translate-y-1/2 px-4 py-2 text-white bg-black bg-opacity-50 hover:bg-opacity-75 z-20"
@@ -47,7 +45,7 @@
                         class="max-w-sm bg-white rounded-lg shadow-md overflow-hidden border border-gray-200 relative group"
                         style="height: 250px;">
                         <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-300 group-hover:brightness-50"
-                            style="background-image: url('{{ asset('images/carousel1.jpg') }}'); transition: filter 0.5s ease;">
+                            style="background-image: url('{{ url('news_files/' . $news->thumbnail) }}'); transition: filter 0.5s ease;">
                         </div>
                         <div class="relative z-10 p-4 h-full flex flex-col justify-end">
                             <span

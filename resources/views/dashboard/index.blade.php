@@ -13,24 +13,44 @@
                     {{ Auth::user()->name }}!
                 </h3>
                 <p class="text-gray-700 mb-6">This is your dashboard where you can manage the SIPAPEDA website.</p>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Example Card 1 -->
-                    <div class="bg-blue-500 text-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                        <h4 class="text-xl font-bold mb-2">Feature 1</h4>
-                        <p>Manage your feature 1 settings here.</p>
+                <section class="bg-gray-200">
+                    <div class="container mx-auto py-5 h-full">
+                        <div class="flex justify-center items-center h-full">
+                            <div class="w-full max-w-md">
+                                <div class="bg-white rounded-lg shadow">
+                                    <div class="p-4">
+                                        <div class="flex flex-col">
+                                            <h5 class="text-lg font-semibold mb-1">Valleryan Virgil Zuliuskandar</h5>
+                                            <p class="text-sm text-gray-600 mb-2">Pengembang Sistem</p>
+                                            <div class="flex justify-between bg-gray-100 rounded p-2 mb-2">
+                                                <div class="mr-3">
+                                                    <p class="text-xs text-gray-500 mb-1">NPM</p>
+                                                    <p class="text-sm">G1A020021</p>
+                                                </div>
+                                                <div>
+                                                    <p class="text-xs text-gray-500 mb-1">Program Studi</p>
+                                                    <p class="text-sm">Informatika</p>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <p class="text-xs text-gray-500 mb-1">Fakultas</p>
+                                                    <p class="text-sm">Teknik</p>
+                                                </div>
+                                            </div>
+                                            <div class="bg-gray-100 rounded p-2 mb-2">
+                                                <p class="text-xs text-gray-500 mb-1">E-mail</p>
+                                                <p class="text-sm">valleryan1212@gmail.com</p>
+                                            </div>
+                                            <div class="pt-1">
+                                                <a href="https://www.linkedin.com/in/valleryan-virgil-zuliuskandar-50366a242/"
+                                                    class="inline-block w-full text-center py-2 px-4 border border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white transition-colors duration-200 rounded">LinkedIn</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Example Card 2 -->
-                    <div class="bg-green-500 text-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                        <h4 class="text-xl font-bold mb-2">Feature 2</h4>
-                        <p>Manage your feature 2 settings here.</p>
-                    </div>
-                    <!-- Example Card 3 -->
-                    <div class="bg-purple-500 text-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                        <h4 class="text-xl font-bold mb-2">Feature 3</h4>
-                        <p>Manage your feature 3 settings here.</p>
-                    </div>
-                </div>
+                </section>
             </div>
         </main>
     </div>

@@ -52,8 +52,8 @@
                     Manajemen Struktur Organisasi
                 </a>
             </li>
-            <li class="p-4 hover:bg-blue-700 {{ request()->is('profil') ? 'bg-blue-700' : '' }}">
-                <a href="/profil-anda" class="flex items-center">
+            <li class="p-4 hover:bg-blue-700 {{ request()->is('dashboard/profile') ? 'bg-blue-700' : '' }}">
+                <a href="/dashboard/profile" class="flex items-center">
                     <i class="fi fi-rr-circle-user mr-3"></i>
                     Profil Anda
                 </a>
