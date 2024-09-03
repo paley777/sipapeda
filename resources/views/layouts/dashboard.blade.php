@@ -17,52 +17,80 @@
     <script src="https://cdn.datatables.net/2.1.4/js/dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/2.1.4/js/dataTables.jqueryui.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/2.1.4/css/dataTables.jqueryui.min.css">
+    <script src="https://unpkg.com/alpinejs@3" defer></script>
+
 </head>
 <style>
     html {
         font-size: 14px;
         /* Default 'em' will now be based on 14px */
+        height: 100%;
+        margin: 0;
     }
 
     body {
         font-family: Arial, sans-serif;
         font-size: 1em;
+        height: 100%;
+        margin: 0;
+        background-color: #f3f4f6;
+        /* Set background color to light gray */
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+        /* Default font weight for headings */
     }
 
     h1 {
         font-size: 2em;
-        /* 28px berdasarkan font-size 14px */
-
+        /* 28px based on a font-size of 14px */
     }
 
     h2 {
         font-size: 1.5em;
-        /* 21px berdasarkan font-size 14px */
-
+        /* 21px based on a font-size of 14px */
     }
 
     h3 {
         font-size: 1.17em;
-        /* 16.38px berdasarkan font-size 14px */
-
+        /* 16.38px based on a font-size of 14px */
     }
 
     h4 {
         font-size: 1em;
-        /* 14px berdasarkan font-size 14px */
-
+        /* 14px based on a font-size of 14px */
     }
 
     h5 {
         font-size: 0.83em;
-        /* 11.62px berdasarkan font-size 14px */
-
+        /* 11.62px based on a font-size of 14px */
     }
 
     h6 {
         font-size: 0.67em;
-        /* 9.38px berdasarkan font-size 14px */
+        /* 9.38px based on a font-size of 14px */
+    }
 
+    .container {
+        min-height: 100%;
+        /* Make sure .container takes at least the full height of the viewport */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        /* This ensures that the footer pushes to the bottom */
+    }
+
+    footer {
+        position: sticky;
+        top: 100vh;
+        /* This ensures the footer sticks to the bottom of the viewport */
+        width: 100%;
     }
 
     #scrollTopBtn {
@@ -110,6 +138,8 @@
 </body>
 
 </html>
+
+
 <script>
     //Get the button
     var mybutton = document.getElementById("scrollTopBtn");

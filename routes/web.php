@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PerdaController;
+use App\Http\Controllers\PergubController;
+use App\Http\Controllers\PelanggarController;
 
 //LANDING
 Route::get('/', [LandingController::class, 'index']);
@@ -18,4 +21,12 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 //DASHBOARD
-Route::get('/dashboard', [AuthController::class, 'dashboard'])->middleware('auth');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [AuthController::class, 'dashboard']);
+    Route::resource('dashboard/perda', PerdaController::class);
+    Route::resource('dashboard/pergub', PergubController::class);
+    Route::resource('dashboard/pelanggar', PelanggarController::class);
+    Route::post('dashboard/perda/import', [PerdaController::class, 'importExcel'])->name('perda.import');
+    Route::post('dashboard/pergub/import', [PergubController::class, 'importExcel'])->name('pergub.import');
+});
