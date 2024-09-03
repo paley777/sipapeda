@@ -71,6 +71,12 @@ return [
             'url' => env('APP_URL') . '/pelanggar',
             'visibility' => 'public',
         ],
+        'news' => [
+            'driver' => 'local',
+            'root' => public_path('news_files'),
+            'url' => env('APP_URL') . '/berita',
+            'visibility' => 'public',
+        ],
     ],
 
     /*

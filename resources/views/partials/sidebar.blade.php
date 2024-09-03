@@ -40,8 +40,8 @@
                     </li>
                 </ul>
             </li>
-            <li class="p-4 hover:bg-blue-700 {{ request()->is('manajemen-berita') ? 'bg-blue-700' : '' }}">
-                <a href="/manajemen-berita" class="flex items-center">
+            <li class="p-4 hover:bg-blue-700 {{ request()->is('dashboard/berita') ? 'bg-blue-700' : '' }}">
+                <a href="/dashboard/berita" class="flex items-center">
                     <i class="fi fi-rr-newspaper mr-3"></i>
                     Manajemen Berita
                 </a>

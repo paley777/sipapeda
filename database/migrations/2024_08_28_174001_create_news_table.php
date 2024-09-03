@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('slug');
             $table->string('kreator');
             $table->longText('konten');
-            $table->string('thumbnail');
+            $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
     }
